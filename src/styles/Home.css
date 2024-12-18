@@ -1,0 +1,11 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: auto;
+    margin:10px;
+}
+.heading{
+    padding: 50px;
+    margin:20px;
+}
