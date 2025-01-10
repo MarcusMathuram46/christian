@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 function NavBar() {
   return (
     <div>
-      <Navbar fixed="top" bg="dark" data-bs-theme="dark">
+      <Navbar fixed="top" bg="light" data-bs-theme="light">
         <Container>
           <Navbar.Brand as={Link} to="/">Christian</Navbar.Brand>
           <Nav className="me-auto">
