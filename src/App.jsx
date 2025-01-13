@@ -11,17 +11,17 @@ const advertisements=[
   {
     title: "Ad 1",
     description: "This is the first advertisement.",
-    image: "https://via.placeholder.com/600x400",
+    image: "https://i.postimg.cc/v80JCSCh/bib2.jpg",
   },
   {
     title: "Ad 2",
     description: "This is the second advertisement.",
-    image: "https://via.placeholder.com/600x400",
+    image: "https://i.postimg.cc/8kwGNCfh/bible1.jpg",
   },
   {
     title: "Ad 3",
     description: "This is the third advertisement.",
-    image: "https://via.placeholder.com/600x400",
+    image: "https://i.postimg.cc/NMHKZHj7/bible.jpg",
   },
 ]
 function App() {
