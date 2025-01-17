@@ -1,0 +1,154 @@
+/* Footer Container */
+.footer-container {
+    width: 100%; /* Full screen width */
+    background-color: #003366;
+    color: white;
+    display: flex;
+    flex-direction: column; /* Stack content and footer-bottom */
+    padding: 20px 0; /* Padding for better readability */
+    box-sizing: border-box; /* Include padding in width/height calculations */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+    z-index: 1000;
+}
+
+/* Footer Content Section */
+.footer-content {
+    display: flex;
+    flex-direction: row; /* Horizontal layout */
+    justify-content: space-between; /* Distribute sections evenly */
+    align-items: center; /* Align items vertically in the center */
+    width: 100%; /* Full width */
+    gap: 20px; /* Space between sections */
+    padding: 0 30px; /* Side padding for spacing */
+    box-sizing: border-box;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+/* Logo Section */
+.footer-logo {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    gap: 10px; /* Space between icon and text */
+    flex: 1; /* Allow equal spacing */
+}
+
+.logo-icon {
+    font-size: 2rem;
+    color: gold; /* Highlight with gold color */
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Links Section */
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1; /* Equal spacing */
+}
+
+.footer-links h4 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px; /* Space between links */
+    flex-wrap: wrap; /* Wrap links if necessary */
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #00aaff; /* Add hover effect */
+}
+
+/* Social Section */
+.footer-social {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Align to the right */
+    gap: 10px;
+    flex: 1; /* Equal spacing */
+}
+
+.footer-social h4 {
+    font-size: 1.2rem;
+}
+
+.footer-social .social-icons {
+    display: flex;
+    gap: 15px; /* Space between icons */
+}
+
+.social-link {
+    font-size: 1.5rem;
+    color: white;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-link:hover {
+    transform: scale(1.2);
+    color: #00aaff;
+}
+
+/* Footer Bottom Section */
+.footer-bottom {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #ccc;
+    width: 100%; /* Full width */
+    border-top: 2px solid white; /* Add top border */
+    padding-top: 10px; /* Space above text */
+    box-sizing: border-box;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; /* Stack sections vertically */
+        align-items: center; /* Center-align all sections */
+    }
+
+    .footer-links ul {
+        flex-direction: column; /* Stack links vertically */
+        gap: 10px; /* Reduce space for smaller screens */
+    }
+
+    .footer-social {
+        align-items: center; /* Center-align icons */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-logo .logo-text {
+        font-size: 1.2rem; /* Adjust text size */
+    }
+
+    .footer-links h4,
+    .footer-social h4 {
+        font-size: 1rem; /* Reduce heading sizes */
+    }
+
+    .footer-links a {
+        font-size: 0.9rem; /* Adjust link size */
+    }
+
+    .social-link {
+        font-size: 1.3rem; /* Adjust icon size */
+    }
+}

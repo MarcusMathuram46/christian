@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Login from './components/Login';
 import "./styles/App.css"
 import Register from "./components/Register";
+import Footer from "./components/Footer";
 
 const advertisements=[
   {
@@ -34,6 +35,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
         </Routes>
+        <Footer />
       </div>
     </Router>
   );
