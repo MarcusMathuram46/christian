@@ -88,7 +88,7 @@ function Login() {
             </Button>
           </motion.div>
           <p className="mt-3">
-            Don't have an account? <Link to="/register">Register here</Link>
+            Don't have an account? <Link className="link-register" to="/register">Register here</Link>
           </p>
           {msg && (
             <motion.p

@@ -1,14 +1,4 @@
-/* General Styles */
-body{
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to right, #6a11cb, #2575fc);
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;    
-    align-items: center;
-    height: 100vh;
-}
+
 /* Login Container */
 .login-container {
     display: flex;
@@ -40,6 +30,10 @@ body{
     background-color: #2575fc;
     border-color: #2575fc;
     transform: scale(1.05);
+}
+
+.link-register{
+    text-decoration: none;
 }
 
 /* Responsive design */

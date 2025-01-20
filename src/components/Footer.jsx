@@ -7,7 +7,7 @@ function Footer() {
     <motion.footer className='footer-container' initial={{ opacity:0, y: 50 }} animate={{ opacity: 1,y:0}} transition={{ duration:1}}>
       <div className='footer-content'>
         <div className="footer-logo">
-        <FaCrown className="logo-icon" />
+          <FaCrown className="logo-icon me-2" />
           <h3 className='logo-text'>Kingdoms Connect</h3>
         </div>
         <div className="footer-links">
