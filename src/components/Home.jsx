@@ -11,9 +11,19 @@ function Home({ advertisements }) {
     return ()=> clearInterval(interval);
   },[advertisements]);
   return (
-    <motion.div className='home-container'>
-      <h1 className='heading'>Welcome Back</h1>
-
+    <motion.div className='home-container container-fluid' initial={{ opacity: 0}} animate={{ opacity: 1}} transition={{ duration:1}}>
+      <header className="text-center py-3">
+        <h1 className="home-title">CHRISTIAN TODAY</h1>
+      </header>
+      <nav className="navbar navbar-expand-lg navbar-light bg-light mb-4">
+        <ul className="navbar-nav mx-auto">
+          <li className="nav-item mx-2"><a href="#home" className="nav-link">Home</a></li>
+          <li className="nav-item mx-2"><a href="#news" className="nav-link">News</a></li>
+          <li className="nav-item mx-2"><a href="#district" className="nav-link">District</a></li>
+          <li className="nav-item mx-2"><a href="#comment" className="nav-link">Comment</a></li>
+          <li className="nav-item mx-2"><a href="" className="nav-link">Video</a></li>
+        </ul>
+      </nav>
       {/* Slider Container */}
       <div className='slider'>
         <AnimatePresence mode='wait'>

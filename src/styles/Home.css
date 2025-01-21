@@ -1,110 +1,32 @@
-.home-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.home-container {
+    background-color: #fff;
+    color: #000;
     padding: 20px;
-    margin:10px;
-    text-align: center;
-}
-.heading{
-    font-size: 2rem;
-    margin-bottom:20px;
-    color: #003366;
-}
-
-/* Slider */
-
-.slider{
-    width: 100%;
-    max-width: 900px;
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.slider-item{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    text-align: center;
-    gap: 20px;
-}
-
-.ad-image{
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-.ad-content{
-    padding: 20px;
-    background: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    max-width: 100%;
-}
-
-.ad-title{
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #003366;
-}
-
-.ad-description{
-    font-size: 1rem;
-    margin-bottom: 20px;
-    color: #555;
-}
-
-.btn-read-more {
-    padding: 10px 20px;
+  }
+  
+  .site-title {
+    font-family: "Georgia", serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  
+  .article-card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+  }
+  
+  .article-card:hover {
+    transform: scale(1.02);
+  }
+  
+  .most-read {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .list-group-item {
     border: none;
-    border-radius: 5px;
-    background-color: #003366;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.btn-read-more:hover {
-    background-color: #0055aa;
-}
-
-/* Responsive Design */
-
-@media (max-width: 768px) {
-    .ad-content {
-        max-width: 100%;
-        padding: 10px;
-    }
-
-    .heading{
-        font-size: 1.5rem;
-    }
-
-    .ad-title{
-        font-size: 1.2rem;
-    }
-
-    .ad-description{
-        font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 480px){
-    .ad-image{
-        width: 100%;
-        height: auto;
-    }
-
-    .btn-read-more{
-        padding: 8px 16px;
-        font-size: 0.9rem;
-    }
-}
+  }
+  
