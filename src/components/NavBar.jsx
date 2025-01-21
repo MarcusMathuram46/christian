@@ -25,6 +25,10 @@ function NavBar() {
     navigate("/login"); // Navigate to the Login component
   };
 
+  const handleBrandClick = () => {
+    navigate("/"); // Navigate to Home when the brand is clicked
+  };
+
   const toggleVariants = {
     hidden: { height: 0, opacity: 0 },
     visible: { height: "auto", opacity: 1 },
@@ -47,7 +51,6 @@ function NavBar() {
               aria-controls="basic-navbar-nav"
               onClick={() => setToggleOpen((prev) => !prev)}
             >
-              {/* Show Hamburger Icon when Closed */}
               {!toggleOpen && <span>☰</span>}
             </Navbar.Toggle>
 
@@ -55,11 +58,12 @@ function NavBar() {
             <div className="search-icon ms-3">
               <FaSearch />
             </div>
-            {/* Login*/}
+            {/* Login */}
             <button className="btn-subscribe ms-3" onClick={handleLoginClick}>
               Login
             </button>
           </motion.div>
+
           {/* Center Section: Brand */}
           <motion.div
             className="brand-container"
@@ -67,7 +71,19 @@ function NavBar() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
           >
-            <h1 className="brand-name">KINGDOM CONNECT</h1>
+            <motion.h1
+              className="brand-name"
+              onClick={handleBrandClick}
+              whileHover={{
+                scale: 1.1,
+                rotate: 3,
+                textShadow: "0px 0px 8px rgba(255, 255, 255, 0.9)",
+              }}
+              whileTap={{ scale: 0.9 }}
+              style={{ cursor: "pointer" }}
+            >
+              KINGDOM CONNECT
+            </motion.h1>
           </motion.div>
 
           {/* Right Section: Social Media Icons */}
@@ -138,6 +154,7 @@ function NavBar() {
           </Nav>
         </Container>
       </motion.div>
+
       {/* Toggle Bar Content */}
       <AnimatePresence>
         {toggleOpen && (
@@ -153,7 +170,6 @@ function NavBar() {
             transition={{ duration: 0.5 }}
           >
             <div className="toggle-bar">
-              {/* Close Button (X) */}
               <div
                 className="close-icon"
                 onClick={() => setToggleOpen(false)}
@@ -161,8 +177,7 @@ function NavBar() {
               >
                 <FaTimes />
               </div>
-              
-              {/* Search Bar */}
+
               <div className="search-bar">
                 <FaSearch className="search-icon" />
                 <input
@@ -171,8 +186,7 @@ function NavBar() {
                   placeholder="Search"
                 />
               </div>
-              
-              {/* Navigation Links */}
+
               <Nav className="navbar-nav flex-column mt-3">
                 <Nav.Link
                   as={Link}
@@ -182,92 +196,14 @@ function NavBar() {
                 >
                   HOME
                 </Nav.Link>
-                <Nav.Link
-                  as={Link}
-                  to="/news"
-                  onClick={() => setToggleOpen(false)}
-                >
-                  NEWS
-                </Nav.Link>
-                <Nav.Link
-                  as={Link}
-                  to="/us"
-                  onClick={() => setToggleOpen(false)}
-                >
-                  US
-                </Nav.Link>
-                <Nav.Link
-                  as={Link}
-                  to="/world"
-                  onClick={() => setToggleOpen(false)}
-                >
-                  WORLD
-                </Nav.Link>
-                <Nav.Link
-                  as={Link}
-                  to="/church"
-                  onClick={() => setToggleOpen(false)}
-                >
-                  CHURCH
-                </Nav.Link>
-                <Nav.Link
-                  as={Link}
-                  to="/culture"
-                  onClick={() => setToggleOpen(false)}
-                >
-                  CULTURE
-                </Nav.Link>
-                <Nav.Link
-                  as={Link}
-                  to="/lifestyle"
-                  onClick={() => setToggleOpen(false)}
-                >
-                  LIFESTYLE
-                </Nav.Link>
-                <Nav.Link
-                  as={Link}
-                  to="/comment"
-                  onClick={() => setToggleOpen(false)}
-                >
-                  COMMENT
-                </Nav.Link>
-                <Nav.Link
-                  as={Link}
-                  to="/video"
-                  onClick={() => setToggleOpen(false)}
-                >
-                  VIDEO
-                </Nav.Link>
+                {/* Add other Nav Links here */}
               </Nav>
 
-              {/* Social Icons */}
               <div className="social-icons mt-3">
                 <a href="https://facebook.com" target="_blank" rel="noreferrer">
                   <FaFacebookF />
                 </a>
-                <a href="https://twitter.com" target="_blank" rel="noreferrer">
-                  <FaTwitter />
-                </a>
-                <a
-                  href="https://pinterest.com"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <FaPinterest />
-                </a>
-                <a href="mailto:info@christiantoday.com">
-                  <FaEnvelope />
-                </a>
-                <a
-                  href="https://instagram.com"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <FaInstagram />
-                </a>
-                <a href="https://tumblr.com" target="_blank" rel="noreferrer">
-                  <FaTumblr />
-                </a>
+                {/* Add other social icons here */}
               </div>
             </div>
           </motion.div>
