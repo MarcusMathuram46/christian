@@ -8,30 +8,14 @@ import "./styles/App.css"
 import Register from "./components/Register";
 import Footer from "./components/Footer";
 
-const advertisements=[
-  {
-    title: "Ad 1",
-    description: "This is the first advertisement.",
-    image: "https://i.postimg.cc/v80JCSCh/bib2.jpg",
-  },
-  {
-    title: "Ad 2",
-    description: "This is the second advertisement.",
-    image: "https://i.postimg.cc/8kwGNCfh/bible1.jpg",
-  },
-  {
-    title: "Ad 3",
-    description: "This is the third advertisement.",
-    image: "https://i.postimg.cc/NMHKZHj7/bible.jpg",
-  },
-]
+
 function App() {
   return (
     <Router>
       <div className="App">
         <NavBar />
         <Routes>
-          <Route path="/" element={<Home advertisements={advertisements} />} />
+          <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
         </Routes>
