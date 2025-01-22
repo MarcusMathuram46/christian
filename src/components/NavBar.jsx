@@ -130,20 +130,14 @@ function NavBar() {
             <Nav.Link as={Link} to="/news">
               NEWS
             </Nav.Link>
-            <Nav.Link as={Link} to="/us">
-              US
-            </Nav.Link>
-            <Nav.Link as={Link} to="/world">
-              WORLD
+            <Nav.Link as={Link} to="/india">
+              INDIA
             </Nav.Link>
             <Nav.Link as={Link} to="/church">
               CHURCH
             </Nav.Link>
             <Nav.Link as={Link} to="/culture">
               CULTURE
-            </Nav.Link>
-            <Nav.Link as={Link} to="/lifestyle">
-              LIFESTYLE
             </Nav.Link>
             <Nav.Link as={Link} to="/comment">
               COMMENT
@@ -196,14 +190,75 @@ function NavBar() {
                 >
                   HOME
                 </Nav.Link>
-                {/* Add other Nav Links here */}
+                <Nav.Link
+                  as={Link}
+                  to="/news"
+                  onClick={() => setToggleOpen(false)}
+                >
+                  NEWS
+                </Nav.Link>
+                <Nav.Link
+                  as={Link}
+                  to="/india"
+                  onClick={() => setToggleOpen(false)}
+                >
+                  INDIA
+                </Nav.Link>
+                <Nav.Link
+                  as={Link}
+                  to="/church"
+                  onClick={() => setToggleOpen(false)}
+                >
+                  CHURCH
+                </Nav.Link>
+                <Nav.Link
+                  as={Link}
+                  to="/culture"
+                  onClick={() => setToggleOpen(false)}
+                  >CULTURE</Nav.Link>
+                <Nav.Link
+                  as={Link}
+                  to="/comment"
+                  onClick={() => setToggleOpen(false)}
+                >
+                  COMMENT
+                </Nav.Link>
+                <Nav.Link
+                  as={Link}
+                  to="/video"
+                  onClick={() => setToggleOpen(false)}
+                >
+                  VIDEO
+                </Nav.Link>
               </Nav>
 
               <div className="social-icons mt-3">
                 <a href="https://facebook.com" target="_blank" rel="noreferrer">
                   <FaFacebookF />
                 </a>
-                {/* Add other social icons here */}
+                <a href="https://twitter.com" target="_blank" rel="noreferrer">
+                  <FaTwitter />
+                </a>
+                <a
+                  href="https://pinterest.com"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <FaPinterest />
+                </a>
+                <a href="mailto:info@christiantoday.com">
+                  <FaEnvelope />
+                </a>
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <FaInstagram />
+                </a>
+                <a href="https://tumblr.com" target="_blank" rel="noreferrer">
+                  <FaTumblr />
+                </a>
               </div>
             </div>
           </motion.div>

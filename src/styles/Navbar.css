@@ -104,7 +104,7 @@
     font-size: 0.9rem;
     color: black;
     text-transform: uppercase;
-    padding-bottom: 20px;
+    padding: 20px;
   }
   
   .nav-links .nav-link:hover {

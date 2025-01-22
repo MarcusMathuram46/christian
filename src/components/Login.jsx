@@ -47,7 +47,7 @@ function Login() {
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
         <motion.h2
-          className="text-center mb-4"
+          className="text-center mb-4 text-black"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.8 }}
@@ -56,7 +56,7 @@ function Login() {
         </motion.h2>
         <Form onSubmit={handleLogin}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Email Address</Form.Label>
+            <Form.Label className="text-black">Email Address</Form.Label>
             <Form.Control
               type="email"
               name="email"
@@ -71,7 +71,7 @@ function Login() {
             </Form.Text>
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
+            <Form.Label className="text-black">Password</Form.Label>
             <Form.Control
               type="password"
               name="password"
