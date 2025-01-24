@@ -9,6 +9,7 @@ import Register from "./components/Register";
 import Footer from "./components/Footer";
 import News from "./components/News";
 import TamilNadu from "./components/TamilNadu";
+import Church from "./components/Church";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/news" element={<News />} />
           <Route path="/tamilnadu" element={<TamilNadu />}/>
+          <Route path="/church" element={<Church />} />
         </Routes>
       </div>
       <Footer />

@@ -1,0 +1,89 @@
+/* Church.css */
+.church-container {
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .city-dropdown {
+    padding: 10px;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 300px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: 0.3s ease-in-out;
+  }
+  
+  .city-dropdown:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  .church-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .church-item {
+    background-color: #f9f9f9;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 8px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .church-item h2 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+  }
+  
+  .church-item p {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  /* Responsiveness for smaller screens */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2rem;
+    }
+  
+    .church-item {
+      width: 100%;
+      max-width: 300px;
+    }
+  
+    .city-dropdown {
+      width: 90%;
+      font-size: 0.9rem;
+    }
+  }
+  
+  /* More responsiveness for very small screens */
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 1.5rem;
+    }
+  
+    .church-item {
+      width: 100%;
+      max-width: 250px;
+    }
+  
+    .city-dropdown {
+      width: 90%;
+      font-size: 0.8rem;
+    }
+  }
+  
