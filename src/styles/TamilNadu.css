@@ -1,0 +1,52 @@
+.tamilnadu-container{
+    padding:20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #1e1e1e;
+    color: #fff;
+}
+
+.tamilnadu-title{
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #f39c12;
+}
+
+.cities-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.city-card{
+    background: #333;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    color: #f39c12;
+}
+
+.city-card:hover{
+    box-shadow: 0 6px 8px rgba(0,0,0,0.5);
+}
+
+@media(max-width: 768px){
+    .tamilnadu-title{
+        font-size: 2rem;
+    }
+    .city-card{
+        font-size: 1rem;
+        padding: 10px;
+    }
+}

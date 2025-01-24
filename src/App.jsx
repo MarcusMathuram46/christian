@@ -8,6 +8,7 @@ import "./styles/App.css"
 import Register from "./components/Register";
 import Footer from "./components/Footer";
 import News from "./components/News";
+import TamilNadu from "./components/TamilNadu";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/news" element={<News />} />
+          <Route path="/tamilnadu" element={<TamilNadu />}/>
         </Routes>
       </div>
       <Footer />
