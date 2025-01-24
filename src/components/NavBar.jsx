@@ -124,14 +124,14 @@ function NavBar() {
       >
         <Container>
           <Nav className="justify-content-center nav-links">
-            <Nav.Link as={Link} to="/" className="active">
+            <Nav.Link as={Link} to="/">
               HOME
             </Nav.Link>
             <Nav.Link as={Link} to="/news">
               NEWS
             </Nav.Link>
-            <Nav.Link as={Link} to="/india">
-              INDIA
+            <Nav.Link as={Link} to="/tamilnadu">
+              Tamilnadu
             </Nav.Link>
             <Nav.Link as={Link} to="/church">
               CHURCH
@@ -199,10 +199,10 @@ function NavBar() {
                 </Nav.Link>
                 <Nav.Link
                   as={Link}
-                  to="/india"
+                  to="/tamilnadu"
                   onClick={() => setToggleOpen(false)}
                 >
-                  INDIA
+                  Tamilnadu
                 </Nav.Link>
                 <Nav.Link
                   as={Link}

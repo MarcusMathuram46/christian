@@ -2,19 +2,19 @@
     width: 100%;
     background-color: #ffffff;
   }
-  
+
   .custom-navbar {
     padding: 10px 0;
     background-color: #ffffff;
     border-bottom: 1px solid #ddd;
   }
-  
+
   .first-row {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
-  
+
   .brand-name {
     font-size: 2rem;
     font-family: "Georgia", serif;
@@ -29,14 +29,14 @@
     align-items: center;
     padding: 20px;
   }
-  
+
   .search-bar {
     width: 100%;
     display: flex;
     align-items: center;
     margin-bottom: 20px;
   }
-  
+
   .search-icon {
     font-size: 1.2rem;
     cursor: pointer;
@@ -49,7 +49,7 @@
     border: 1px solid #ccc;
     border-radius: 5px;
   }
-  
+
   .navbar-nav {
     margin-top: 10px;
     text-align: center;
@@ -60,7 +60,7 @@
     gap: 15px;
     margin-top: 15px;
   }
-  
+
   .social-icons a {
     font-size: 1.5rem;
     color: #555;
@@ -75,47 +75,47 @@
     border: none;
     cursor: pointer;
   }
-  
+
   .btn-subscribe:hover {
     text-decoration: underline;
   }
-  
+
   .social-icons {
     display: flex;
     gap: 10px;
   }
-  
+
   .social-icons a {
     font-size: 1rem;
     color: black;
     transition: color 0.3s ease;
   }
-  
+
   .social-icons a:hover {
     color: #007bff;
   }
-  
+
   .nav-links-container {
     background-color: #ffffff;
     border-bottom: 1px solid #ddd;
   }
-  
+
   .nav-links .nav-link {
     font-size: 0.9rem;
     color: black;
     text-transform: uppercase;
-    padding: 20px;
+    padding-top: 40px;
   }
-  
+
   .nav-links .nav-link:hover {
     color: #007bff;
   }
-  
+
   .nav-links .nav-link.active {
     color: #007bff;
     font-weight: bold;
   }
-  
+
   /* Smaller screens (e.g., mobile) */
 @media (max-width: 768px) {
   .toggle-bar {
