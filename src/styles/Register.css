@@ -6,7 +6,7 @@
     height: 100%;
     padding: 50px;
     box-sizing: border-box;
-    background: #000; /* Dark theme */
+    background: #1e1e1e; /* Dark theme */
     color: #fff; /* White text for dark theme */
 }
 
@@ -38,7 +38,7 @@
 @media (max-width: 768px){
     .register-box{
         padding: 20px;
-        width: 90%;    
+        width: 90%;
     }
     .btn-animated{
         width: 100%;
