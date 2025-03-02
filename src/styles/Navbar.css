@@ -5,7 +5,7 @@
 
   .custom-navbar {
     padding: 10px 0;
-    background-color: #ffffff;
+    background-color: #3737bb;
     border-bottom: 1px solid #ddd;
   }
 
@@ -18,7 +18,7 @@
   .brand-name {
     font-size: 2rem;
     font-family: "Georgia", serif;
-    color: black;
+    color: white;
     text-transform: uppercase;
     margin: 0;
     text-align: center;
@@ -65,12 +65,12 @@
     font-size: 1.5rem;
     color: #555;
   }
-  .social-icons a:hover {
+  /* .social-icons a:hover {
     color: #000;
-  }
+  } */
   .btn-subscribe {
     background: none;
-    color: #007bff;
+    color: #fff;
     font-weight: bold;
     border: none;
     cursor: pointer;
@@ -78,6 +78,7 @@
 
   .btn-subscribe:hover {
     text-decoration: underline;
+    /* color:#007bff; */
   }
 
   .social-icons {
@@ -87,7 +88,7 @@
 
   .social-icons a {
     font-size: 1rem;
-    color: black;
+    color: white;
     transition: color 0.3s ease;
   }
 
@@ -96,15 +97,15 @@
   }
 
   .nav-links-container {
-    background-color: #ffffff;
+    background-color: #3531bd;
     border-bottom: 1px solid #ddd;
   }
 
   .nav-links .nav-link {
     font-size: 0.9rem;
-    color: black;
+    color: white;
     text-transform: uppercase;
-    padding-top: 40px;
+    /* padding-top: 40px; */
   }
 
   .nav-links .nav-link:hover {

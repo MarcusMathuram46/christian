@@ -77,10 +77,10 @@ function NavBar() {
               whileHover={{
                 scale: 1.1,
                 rotate: 3,
-                textShadow: "0px 0px 8px rgba(255, 255, 255, 0.9)",
+                textShadow: '0px 0px 8px rgba(255, 255, 255, 0.9)',
               }}
               whileTap={{ scale: 0.9 }}
-              style={{ cursor: "pointer" }}
+              style={{ cursor: 'pointer' }}
             >
               KINGDOM CONNECT
             </motion.h1>
@@ -145,6 +145,9 @@ function NavBar() {
             <Nav.Link as={Link} to="/video">
               VIDEO
             </Nav.Link>
+            <Nav.Link as={Link} to="/enquiry">
+              Enquiry
+            </Nav.Link>
           </Nav>
         </Container>
       </motion.div>
@@ -154,9 +157,9 @@ function NavBar() {
         {toggleOpen && (
           <motion.div
             className="toggle-bar"
-            initial={{ x: "-100%", opacity: 0 }}
+            initial={{ x: '-100%', opacity: 0 }}
             animate={{
-              x: toggleOpen ? "0%" : "-100%",
+              x: toggleOpen ? '0%' : '-100%',
               opacity: toggleOpen ? 1 : 0,
             }}
             exit="hidden"
@@ -167,7 +170,7 @@ function NavBar() {
               <div
                 className="close-icon"
                 onClick={() => setToggleOpen(false)}
-                style={{ fontSize: "2rem", cursor: "pointer" }}
+                style={{ fontSize: '2rem', cursor: 'pointer' }}
               >
                 <FaTimes />
               </div>
@@ -215,7 +218,9 @@ function NavBar() {
                   as={Link}
                   to="/culture"
                   onClick={() => setToggleOpen(false)}
-                  >CULTURE</Nav.Link>
+                >
+                  CULTURE
+                </Nav.Link>
                 <Nav.Link
                   as={Link}
                   to="/comment"
@@ -229,6 +234,13 @@ function NavBar() {
                   onClick={() => setToggleOpen(false)}
                 >
                   VIDEO
+                </Nav.Link>
+                <Nav.Link
+                  as={Link}
+                  to="/enquiry"
+                  onClick={() => setToggleOpen(false)}
+                >
+                  Enquiry
                 </Nav.Link>
               </Nav>
 
@@ -265,7 +277,7 @@ function NavBar() {
         )}
       </AnimatePresence>
     </div>
-  );
+  )
 }
 
 export default NavBar;

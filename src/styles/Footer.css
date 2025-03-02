@@ -1,8 +1,8 @@
 /* Footer Container */
 .footer-container {
   width: 100%;
-  background-color: #ffffff;
-  color: black;
+  background-color: #2b56cd;
+  color: white;
   display: flex;
   flex-direction: column;
   padding: 20px 0;
@@ -67,7 +67,7 @@
 }
 
 .footer-links a {
-  color: black;
+  color: white;
   text-decoration: none;
   font-size: 1rem;
   transition: color 0.3s ease, transform 0.3s ease;
@@ -98,7 +98,7 @@
 
 .social-link {
   font-size: 1.5rem;
-  color: black;
+  color: white;
   transition: transform 0.3s ease, color 0.3s ease;
 }
 

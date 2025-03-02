@@ -10,7 +10,8 @@ import Footer from "./components/Footer";
 import News from "./components/News";
 import TamilNadu from "./components/TamilNadu";
 import Church from "./components/Church";
-
+import Enquiry from "./components/Enquiry"
+import Video from "./components/Video"
 
 function App() {
   return (
@@ -22,13 +23,15 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/news" element={<News />} />
-          <Route path="/tamilnadu" element={<TamilNadu />}/>
+          <Route path="/tamilnadu" element={<TamilNadu />} />
           <Route path="/church" element={<Church />} />
+          <Route path="/enquiry" element={<Enquiry />} />
+          <Route path="/video" element={<Video/>} />
         </Routes>
       </div>
       <Footer />
     </Router>
-  );
+  )
 }
 
 export default App;

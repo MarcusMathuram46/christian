@@ -19,7 +19,7 @@ function Church() {
   const handleCityChange = (event) => {
     const city = event.target.value;
     setSelectedCity(city);
-    const filtered = city 
+    const filtered = city
       ? churchData.filter(church => church.city === city)
       : churchData;
     setFilteredChurches(filtered);
@@ -28,7 +28,7 @@ function Church() {
   return (
     <div className="church-container">
       <h1>Churches in Tamil Nadu</h1>
-      
+
       {/* Dropdown for selecting city */}
       <motion.select
         onChange={handleCityChange}
@@ -54,7 +54,7 @@ function Church() {
         transition={{ duration: 0.8 }}
       >
         {filteredChurches.map((church, index) => (
-          <motion.div 
+          <motion.div
             key={index}
             className="church-item"
             initial={{ y: -20, opacity: 0 }}
