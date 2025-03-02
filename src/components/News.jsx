@@ -15,9 +15,9 @@ function News() {
     const fetchNews = async () => {
       try {
         const [importantRes, mostReadRes, generalRes] = await Promise.all([
-          axios.get('/api/news/important'),
-          axios.get('/api/news/most-read'),
-          axios.get('/api/news/general'),
+          axios.get('http://localhost:4000/api/news/important'),
+          axios.get('http://localhost:4000/api/news/most-read'),
+          axios.get('http://localhost:4000/api/news/general'),
         ])
 
         setImportantNews(

@@ -4,64 +4,53 @@ import { motion, AnimatePresence } from 'framer-motion'
 import axios from 'axios'
 
 function Home() {
-  const [ads, setAds] = useState([])
-  const [news, setNews] = useState([])
+  const [importantAds, setImportantAds] = useState([])
+  const [generalAds, setGeneralAds] = useState([])
+  const [mostReadAds, setMostReadAds] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const [currentIndex, setCurrentIndex] = useState(0)
-  const [importantNews, setImportantNews] = useState([])
-  const [mostReadNews, setMostReadNews] = useState([])
-  const [generalNews, setGeneralNews] = useState([])
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchAdvertisements = async () => {
       try {
-        const [adsRes, newsRes] = await Promise.all([
-          axios.get('http://localhost:4000/api/advertisements'),
-          axios.get('http://localhost:4000/api/news'),
-        ])
-
-        setAds(Array.isArray(adsRes.data) ? adsRes.data : [])
-
-        if (Array.isArray(newsRes.data)) {
-          setNews(newsRes.data)
-          setImportantNews(
-            newsRes.data.filter((item) => item.type === 'important')
-          )
-          setMostReadNews(
-            newsRes.data.filter((item) => item.type === 'most-read')
-          )
-          setGeneralNews(newsRes.data.filter((item) => item.type === 'general'))
+        const { data } = await axios.get(
+          'http://localhost:4000/api/advertisements'
+        )
+        if (Array.isArray(data)) {
+          setImportantAds(data.filter((ad) => ad.type === 'important'))
+          setMostReadAds(data.filter((ad) => ad.type === 'most-read'))
+          setGeneralAds(data.filter((ad) => ad.type === 'general'))
         }
       } catch (err) {
-        console.error('Error fetching data:', err)
-        setError('Failed to load content.')
+        console.error('Error fetching advertisements:', err)
+        setError('Failed to load advertisements.')
       } finally {
         setLoading(false)
       }
     }
 
-    fetchData()
+    fetchAdvertisements()
   }, [])
 
   useEffect(() => {
-    if (ads.length > 0) {
+    if (importantAds.length > 0) {
       const interval = setInterval(() => {
-        setCurrentIndex((prev) => (prev + 1) % ads.length)
+        setCurrentIndex((prev) => (prev + 1) % importantAds.length)
       }, 3000)
       return () => clearInterval(interval)
     }
-  }, [ads.length])
+  }, [importantAds.length])
 
-  if (loading) return <p>Loading content...</p>
+  if (loading) return <p>Loading advertisements...</p>
   if (error) return <p className="error">{error}</p>
 
   return (
     <motion.div className="home-container">
-      {/* Slider Section */}
+      {/* Slider for Important Advertisements */}
       <motion.div className="slider-section">
         <AnimatePresence mode="wait">
-          {ads.length > 0 && (
+          {importantAds.length > 0 && (
             <motion.div
               key={currentIndex}
               className="slider"
@@ -71,29 +60,32 @@ function Home() {
               transition={{ duration: 0.5 }}
             >
               <img
-                src={ads[currentIndex]?.image}
-                alt={ads[currentIndex]?.title}
+                src={importantAds[currentIndex]?.image}
+                alt={importantAds[currentIndex]?.title}
               />
-              <h2>{ads[currentIndex]?.title}</h2>
-              <p>{ads[currentIndex]?.description}</p>
+              <h2>{importantAds[currentIndex]?.title}</h2>
+              <p>{importantAds[currentIndex]?.description}</p>
             </motion.div>
           )}
         </AnimatePresence>
 
-        {/* Manual Navigation */}
-        {ads.length > 1 && (
+        {importantAds.length > 1 && (
           <>
             <button
               className="prev-btn"
               onClick={() =>
-                setCurrentIndex((currentIndex - 1 + ads.length) % ads.length)
+                setCurrentIndex(
+                  (currentIndex - 1 + importantAds.length) % importantAds.length
+                )
               }
             >
               ❮
             </button>
             <button
               className="next-btn"
-              onClick={() => setCurrentIndex((currentIndex + 1) % ads.length)}
+              onClick={() =>
+                setCurrentIndex((currentIndex + 1) % importantAds.length)
+              }
             >
               ❯
             </button>
@@ -101,93 +93,32 @@ function Home() {
         )}
       </motion.div>
 
-      {/* News Grid Layout */}
-      <div className="content-grid">
-        {/* Center Section - Main News */}
-        <motion.div className="center-section">
-          {news.length > 0 ? (
-            <motion.div className="main-news-item">
-              <motion.img src={news[0]?.image} alt="Main News" />
-              <div className="main-news-text">
-                <motion.h2>{news[0]?.title}</motion.h2>
-                <p className="author">{news[0]?.author}</p>
-                <p>{news[0]?.content}</p>
-              </div>
-            </motion.div>
-          ) : (
-            <p>No important news available</p>
-          )}
-        </motion.div>
-
-        {/* Below Center Section - Additional News */}
-        <motion.div className="below-center-section">
-          {news.slice(1, 4).map((item, index) => (
-            <motion.div key={index} className="horizontal-news-item">
-              <img src={item.image} alt="News Thumbnail" />
-              <div className="horizontal-news-text">
-                <h3>{item.title}</h3>
-                <p>{item.content}</p>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        {/* Right Section - Most Important News */}
-        <motion.div className="right-section">
-          <h3>Most Important News</h3>
-          <ul>
-            {news.slice(4, 8).map((item, index) => (
-              <motion.li key={index}>
-                <img src={item.image} alt="Most Important News" />
-                <span>{item.title}</span>
-              </motion.li>
+      {/* Grid Layout for General & Most Read Advertisements */}
+      <div className="ads-grid">
+        <motion.div className="ads-category">
+          <h3>Most Read Advertisements</h3>
+          <div className="ads-list">
+            {mostReadAds.map((ad, index) => (
+              <motion.div key={index} className="ad-item">
+                <img src={ad.image} alt={ad.title} />
+                <h4>{ad.title}</h4>
+                <p>{ad.description}</p>
+              </motion.div>
             ))}
-          </ul>
-        </motion.div>
-      </div>
-
-      {/* Extra Sections for Better Layout */}
-      <div className="news-sections">
-        {/* Important News Section */}
-        <motion.div className="news-category">
-          <h3>Important News</h3>
-          <ul>
-            {importantNews.map((item, index) => (
-              <li key={index}>
-                <img src={item.image} alt="Important News" />
-                <h4>{item.title}</h4>
-                <p>{item.content}</p>
-              </li>
-            ))}
-          </ul>
+          </div>
         </motion.div>
 
-        {/* Most Read News Section */}
-        <motion.div className="news-category">
-          <h3>Most Read News</h3>
-          <ul>
-            {mostReadNews.map((item, index) => (
-              <li key={index}>
-                <img src={item.image} alt="Most Read News" />
-                <h4>{item.title}</h4>
-                <p>{item.content}</p>
-              </li>
+        <motion.div className="ads-category">
+          <h3>General Advertisements</h3>
+          <div className="ads-list">
+            {generalAds.map((ad, index) => (
+              <motion.div key={index} className="ad-item">
+                <img src={ad.image} alt={ad.title} />
+                <h4>{ad.title}</h4>
+                <p>{ad.description}</p>
+              </motion.div>
             ))}
-          </ul>
-        </motion.div>
-
-        {/* General News Section */}
-        <motion.div className="news-category">
-          <h3>General News</h3>
-          <ul>
-            {generalNews.map((item, index) => (
-              <li key={index}>
-                <img src={item.image} alt="General News" />
-                <h4>{item.title}</h4>
-                <p>{item.content}</p>
-              </li>
-            ))}
-          </ul>
+          </div>
         </motion.div>
       </div>
     </motion.div>
